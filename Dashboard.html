@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+    <title>AKM | Dashboard</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,300;14..32,400;14..32,500;14..32,600;14..32,700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="dashboard-container">
+        <!-- Sidebar Navigation -->
+        <aside class="sidebar">
+            <div class="sidebar-header">
+                <div class="logo">
+                    <svg width="32" height="32" viewBox="0 0 32 32" fill="none">
+                        <rect width="32" height="32" rx="8" fill="url(#logoGrad)"/>
+                        <path d="M10 16L14 20L22 12" stroke="white" stroke-width="2.5" stroke-linecap="round"/>
+                        <defs>
+                            <linearGradient id="logoGrad" x1="0" y1="0" x2="32" y2="32">
+                                <stop stop-color="#a78bfa"/>
+                                <stop offset="1" stop-color="#60a5fa"/>
+                            </linearGradient>
+                        </defs>
+                    </svg>
+                    <span>AKM</span>
+                </div>
+            </div>
+            
+            <nav class="sidebar-nav">
+                <a href="/dashboard.html" class="nav-item active" data-page="dashboard">
+                    <svg width="20" height="20" viewBox="0 0 20 20" fill="none">
+                        <path d="M2 18L2 8M10 18L10 2M18 18L18 12" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>
+                        <path d="M2 8L10 2L18 12L10 18L2 8Z" stroke="currentColor" stroke-width="1.5" fill="none"/>
+                    </svg>
+                    <span>Dashboard</span>
+                </a>
+                <a href="/marketplace.html" class="nav-item" data-page="marketplace">
+                    <svg width="20" height="20" viewBox="0 0 20 20" fill="none">
+                        <circle cx="10" cy="10" r="8" stroke="currentColor" stroke-width="1.5"/>
+                        <path d="M10 2L10 8M10 18L10 12" stroke="currentColor" stroke-width="1.5"/>
+                        <path d="M2 10L8 10M18 10L12 10" stroke="currentColor" stroke-width="1.5"/>
+                    </svg>
+                    <span>Marketplace</span>
+                </a>
+                <a href="/campaigns.html" class="nav-item" data-page="campaigns">
+                    <svg width="20" height="20" viewBox="0 0 20 20" fill="none">
+                        <rect x="3" y="8" width="3" height="9" rx="1" stroke="currentColor" stroke-width="1.5"/>
+                        <rect x="8.5" y="5" width="3" height="12" rx="1" stroke="currentColor" stroke-width="1.5"/>
+                        <rect x="14" y="2" width="3" height="15" rx="1" stroke="currentColor" stroke-width="1.5"/>
+                    </svg>
+                    <span>Campaigns</span>
+                </a>
+                <a href="/wallet.html" class="nav-item" data-page="wallet">
+                    <svg width="20" height="20" viewBox="0 0 20 20" fill="none">
+                        <path d="M3 5C3 3.89543 3.89543 3 5 3H15C16.1046 3 17 3.89543 17 5V15C17 16.1046 16.1046 17 15 17H5C3.89543 17 3 16.1046 3 15V5Z" stroke="currentColor" stroke-width="1.5"/>
+                        <path d="M14 11C14 11.5523 13.5523 12 13 12C12.4477 12 12 11.5523 12 11C12 10.4477 12.4477 10 13 10C13.5523 10 14 10.4477 14 11Z" fill="currentColor"/>
+                    </svg>
+                    <span>Wallet</span>
+                </a>
+            </nav>
+            
+            <div class="sidebar-footer">
+                <div class="user-info" id="userInfo"></div>
+            </div>
+        </aside>
+
+        <!-- Main Content -->
+        <main class="main-content">
+            <header class="content-header">
+                <div class="header-title">
+                    <h1 id="pageTitle">Dashboard</h1>
+                    <p id="pageSubtitle">Welcome back, <span id="userName"></span></p>
+                </div>
+                <div class="header-actions">
+                    <button class="btn-secondary" id="refreshBtn">
+                        <svg width="16" height="16" viewBox="0 0 16 16" fill="none">
+                            <path d="M13 3L13 7L9 7" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>
+                            <path d="M13 7C13 7 11.5 4.5 8 4.5C4.5 4.5 3 7 3 7" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>
+                            <path d="M3 13L3 9L7 9" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>
+                            <path d="M3 9C3 9 4.5 11.5 8 11.5C11.5 11.5 13 9 13 9" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>
+                        </svg>
+                        Refresh
+                    </button>
+                </div>
+            </header>
+
+            <div id="dashboardContent">
+                <!-- KPI Cards -->
+                <div class="kpi-grid" id="kpiGrid"></div>
+                
+                <!-- Recent Activity -->
+                <div class="activity-section">
+                    <div class="section-header">
+                        <h2>Recent Activity</h2>
+                        <button class="text-link" id="viewAllBtn">View All</button>
+                    </div>
+                    <div class="activity-list" id="activityList"></div>
+                </div>
+            </div>
+        </main>
+    </div>
+
+    <script src="https://telegram.org/js/telegram-web-app.js"></script>
+    <script src="app.js"></script>
+</body>
+</html>
